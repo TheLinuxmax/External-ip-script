@@ -1,0 +1,14 @@
+#!/bin/bash
+
+curl https://ipinfo.io/ip >> ipnew.txt
+
+file1="/home/pi/ipold.txt"
+file2="/home/pi/ipnew.txt"
+
+if cmp -s "$file1" "$file2"; then
+    rm -r ipnew.txt
+else
+    python Maillogip.py
+    rm -r ipold.txt
+    rm -r ipnew.txt	
+    curl https://ipinfo.io/ip >> ipold.txt
