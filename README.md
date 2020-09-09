@@ -4,4 +4,6 @@ Then its going to compare the new and old.txt. If its the same it removes ipnew.
 If its not the same its going to mail me the ipnew.txt and remove both files. 
 Then its gonne setup the new ip to the ipold.txt. 
 
+The emailing front is through python. Check the python file. 
+
 I integrated it on crontab to run every 15 min.
